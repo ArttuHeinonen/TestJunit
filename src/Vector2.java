@@ -1,4 +1,10 @@
 
+
+/**
+ * Struct that holds 2 values
+ * @author Arttu Heinonen
+ *
+ */
 public class Vector2 {
 	public float x, y;
 	

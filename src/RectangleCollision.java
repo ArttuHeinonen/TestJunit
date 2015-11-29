@@ -6,11 +6,18 @@ public class RectangleCollision {
 	private Vector2 xv1, xv2, yv1, yv2, center1, center2;
 	private float x, y, c1, c2;
 	
+	/**
+	 * Initializes Collider rectangle and wall rectangle
+	 */
 	public RectangleCollision() {
 		collider = new Rectangle();
 		wall = new Rectangle();
 	}
 	
+	
+	/**
+	 * @return does it intersect between rectangles
+	 */
 	public boolean doesRectanglesCollide(){
 		return collider.intersects(wall);
 	}
@@ -22,7 +29,10 @@ public class RectangleCollision {
 	public void setWallValues(int x, int y, int w, int h){
 		wall.setBounds(x, y, w, h);
 	}
-	
+	/**
+	 * Adjusts rectangle positions so that they won't collide anymore.
+	 * @return Shortest way to non-colliding situation
+	 */
 	public Vector2 adjustCollision(){
 		
 		xv1 = new Vector2(wall.x, wall.x + wall.width);
@@ -51,6 +61,9 @@ public class RectangleCollision {
 		return new Vector2(x, y);
 	}
 	
+	/*
+	 * Adjust collision based on x axis.
+	 */
 	public float adjustCollisionX(){
 		xv1 = new Vector2(wall.x, wall.x + wall.width);
 		xv2 = new Vector2(collider.x, collider.x + collider.width);
@@ -67,7 +80,9 @@ public class RectangleCollision {
 		
 		return x;
 	}
-	
+	/*
+	 * Adjust collision based on y axis.
+	 */
 	public float adjustCollisionY(){
 		yv1 = new Vector2(wall.y, wall.y + wall.height);
 		yv2 = new Vector2(collider.y, collider.y + collider.height);

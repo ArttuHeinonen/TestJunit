@@ -25,10 +25,15 @@ public class RectangleCollisionTester {
 	
 	//Tests values as variables
 	@Test
-	public void testAssignedValues(int x, int y){
+	public void testTest(){
+		assertEquals(true, testAssignedValues(10, 10)); 
+		
+	}
+	//Test function for testing purposes
+	public boolean testAssignedValues(int x, int y){
 		rect.setColliderValues(x, y, 50, 50);
 		rect.setWallValues(0, 0, 50, 50);
-		assertEquals(true, rect.doesRectanglesCollide());
+		return rect.doesRectanglesCollide();
 	}
 	
 	//Tests if collision happens, when integer values are crossed
